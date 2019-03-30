@@ -5,5 +5,7 @@ public class Main {
         SpeedConverter s = new SpeedConverter();
         System.out.println( s.toMilesPerHour(97.25));
         s.printConversion(10.25);
+        MegaBytesConverter m = new MegaBytesConverter();
+        m.printMegaBytesAndKiloBytes(4100);
     }
 }
