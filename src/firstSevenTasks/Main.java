@@ -9,6 +9,8 @@ public class Main {
         m.printMegaBytesAndKiloBytes(4100);
         LeapYearCalculator leap = new LeapYearCalculator();
         System.out.println(leap.isLeapYear(1924));
+        DecimalComparator d = new DecimalComparator();
+        System.out.println(d.areEqualByThreeDecimalPlaces(23.4565,23.454));
 
     }
 }
