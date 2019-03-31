@@ -7,5 +7,8 @@ public class Main {
         s.printConversion(10.25);
         MegaBytesConverter m = new MegaBytesConverter();
         m.printMegaBytesAndKiloBytes(4100);
+        LeapYearCalculator leap = new LeapYearCalculator();
+        System.out.println(leap.isLeapYear(1924));
+
     }
 }
