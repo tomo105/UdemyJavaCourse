@@ -1,4 +1,4 @@
-package CarpetCostCalculator;
+package CarpetCostCalculator_ComplexNumber;
 
 public class Calculator {
     private Floor floor;
