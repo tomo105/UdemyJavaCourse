@@ -1,4 +1,4 @@
-package Inheritance;
+package Inheritance.VehicleTask;
 
 public class Car extends Vehicle {
     private int wheels;

@@ -1,4 +1,4 @@
-package Inheritance;
+package Inheritance.VehicleTask;
 
 public class Audi extends Car {
     private int maxSpeed;

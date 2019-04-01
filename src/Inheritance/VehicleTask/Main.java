@@ -1,4 +1,6 @@
-package Inheritance;
+package Inheritance.VehicleTask;
+
+import Inheritance.VehicleTask.Audi;
 
 public class Main {
     public static void main(String[] args) {
