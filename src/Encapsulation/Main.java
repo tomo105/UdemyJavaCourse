@@ -10,7 +10,7 @@ public class Main {
         //any harm when using
 
         //----------
-        Printer printer = new Printer(50,true);
+        Printer printer = new Printer(50, true);
         int pagesToprint = printer.printPage(35);
         System.out.println("printedd pages " + pagesToprint);
 
