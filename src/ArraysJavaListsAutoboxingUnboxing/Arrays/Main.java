@@ -1,5 +1,6 @@
 package ArraysJavaListsAutoboxingUnboxing.Arrays;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -7,13 +8,14 @@ public class Main {
 
     public static void main(String[] args) {
         int[] myArray = {106, 26, 81, 5, 15};
-        printarray(myArray);
+        printArray(myArray);
         System.out.println();
         int[] sorted = sortIntegers(myArray);
-        printarray(sorted);
+        printArray(sorted);
+        System.out.println("myPrintArray"+ Arrays.toString(sorted));
     }
 
-    public static void printarray(int[] array) {
+    public static void printArray(int[] array) {
         for (int i = 0; i < array.length; i++)
             System.out.println("my array consist at " + i + " : the number " + array[i]);
     }
