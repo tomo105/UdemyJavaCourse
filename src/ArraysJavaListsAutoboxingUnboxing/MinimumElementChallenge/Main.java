@@ -1,6 +1,6 @@
 package ArraysJavaListsAutoboxingUnboxing.MinimumElementChallenge;
 
-import java.sql.Array;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +8,12 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("enter a number (integer) count: ");
-        int num =  scanner.nextInt();
+        int num = scanner.nextInt();
         scanner.nextLine();
         int[] myReturnedArray = readIntegers(num);
+        System.out.println(findMin(myReturnedArray));
+        System.out.println(findMax(myReturnedArray));
+        System.out.println(findMin2(myReturnedArray));
 
     }
 
@@ -24,13 +27,34 @@ public class Main {
         }
         return tab;
     }
+
     private static int findMin(int[] array) {
         int min = Integer.MAX_VALUE;
-        for(int i = 0; i<array.length;i++){
-            int val = array[i];
-            if(val < min)
+        for (int val : array) {
+            if (val < min)
                 min = val;
         }
+        return min;
+    }
+
+    private static int findMin2(int[] array) {
+        int min = array[0];
+        for (int i = 0; i < array.length - 1; i++) {
+            if (min > array[i + 1]) {
+                min = array[i + 1];
+            }
+        }
+        return min;
+    }
+
+    private static int findMax(int[] array) {
+        int max = array[0];
+        for (int i = 0; i < array.length - 1; i++) {
+            if (max < array[i + 1]) {
+                max = array[i + 1];
+            }
+        }
+        return max;
     }
 }
 //*-Write a method called readIntegers() with a parameter called count that represents how many integers the user needs to enter.

@@ -3,7 +3,7 @@ package Classes;
 public class Main {
     public static void main(String[] args) {
         SimpleCalculator calc = new SimpleCalculator();
-        calc.setFirstNumber(4);
+        calc.setFirstNumber(40);
         calc.setSecondNumber(6);
         calc.getAdditionResult();
         calc.getDivisionresult();
