@@ -1,5 +1,7 @@
 package ArraysJavaListsAutoboxingUnboxing.MinimumElementChallenge;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,14 +9,26 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("enter a number (integer) count: ");
-        int num = scanner.nextInt();
-        scanner.nextLine();
-        int[] myReturnedArray = readIntegers(num);
+        //  System.out.println("enter a number (integer) count: ");
+        //  int num = scanner.nextInt();
+        //  scanner.nextLine();
+        int[] myReturnedArray = new int[]{34, 2, 3, 1, 423};
+        // int[] myReturnedArray = readIntegers(num);
         System.out.println(findMin(myReturnedArray));
         System.out.println(findMax(myReturnedArray));
         System.out.println(findMin2(myReturnedArray));
+        int[] a = new int[]{1, 2, 3, 4};
+        //modifyArray(a);
+        reverse(myReturnedArray);
+        System.out.println(Arrays.toString(myReturnedArray));
 
+
+    }
+
+    //reference to my initial array from main
+    private static void modifyArray(int[] array) {
+        array[0] = 2;     //
+        array = new int[]{1, 2, 3, 4, 5};  //new array and new reference!!
     }
 
     private static int[] readIntegers(int count) {
@@ -26,6 +40,16 @@ public class Main {
             tab[i] = number;
         }
         return tab;
+    }
+
+    private static void reverse(int[] array) {
+        int maxIndex = array.length - 1;
+        int halfLength = array.length / 2;
+        for (int i = 0; i < halfLength; i++) {
+            int temp = array[i];
+            array[i] = array[maxIndex - i];
+            array[maxIndex - i] = temp;
+        }
     }
 
     private static int findMin(int[] array) {
@@ -45,6 +69,18 @@ public class Main {
             }
         }
         return min;
+    }
+
+    private static int[] resize(int[] array, int size) {
+        if (size < array.length) {
+            System.out.println("to little space for input array");
+            return null;
+        }
+        int[] newArray = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
     }
 
     private static int findMax(int[] array) {
