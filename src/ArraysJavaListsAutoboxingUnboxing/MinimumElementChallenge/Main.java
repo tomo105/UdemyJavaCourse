@@ -54,10 +54,9 @@ public class Main {
 
     private static int findMin(int[] array) {
         int min = Integer.MAX_VALUE;
-        for (int val : array) {
+        for (int val : array)
             if (val < min)
                 min = val;
-        }
         return min;
     }
 
@@ -71,8 +70,8 @@ public class Main {
         return min;
     }
 
-    private static int[] resize(int[] array, int size) {
-        if (size < array.length) {
+    private static int[] resize(int[] array, int size) {  //it 's manual example not very good idea
+        if (size < array.length) {                        //better to use array method
             System.out.println("to little space for input array");
             return null;
         }

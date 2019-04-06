@@ -1,5 +1,6 @@
 package ArraysJavaListsAutoboxingUnboxing.ListAndListArrays;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -34,14 +35,35 @@ public class Main {
                     searchForItem();
                     break;
                 case 6:
+                    processArrayList();
+                    break;
+                case 7:
                     quit = true;
                     break;
 
             }
         }
     }
+    //----------------------------------------METHODS-------------------------------------------------------
+    //how to copy a ArrayList easy
+    private static void processArrayList() {
+        //1
+        ArrayList<String> newArray = new ArrayList<String>();
+        newArray.addAll(groceryList.getGroceryList()); //da nam cala kopie grocerylist przez getera
+        groceryList.printGroceryList();
 
-    public static void printInstruction() {
+        //2 in one moment
+        ArrayList<String> nextrray = new ArrayList<String>(groceryList.getGroceryList());
+        groceryList.printGroceryList();
+        //3 arraylist to array convertion
+        String[] myArray = new String[groceryList.getGroceryList().size()]; //initialize
+        myArray = groceryList.getGroceryList().toArray(myArray);
+        groceryList.printGroceryList();
+    }
+
+
+
+    private static void printInstruction() {
         System.out.println("\n Press");
         System.out.println("0 to print choise option ");
         System.out.println("1 to print groceryList ");
@@ -49,39 +71,39 @@ public class Main {
         System.out.println("3 to modify item in list");
         System.out.println("4 to remove item");
         System.out.println("5 to search for an item");
-        System.out.println("6 to quit");
+        System.out.println("6 to process the array");
+        System.out.println("7 to quit");
     }
 
-    public static void addItem() {
+    private static void addItem() {
         System.out.println("please enter the grocery item which you want to add : ");
         groceryList.addGroceryList(scanner.nextLine());
 
     }
 
-    public static void modifyItem() {
-        System.out.println("enter item position 0-...");
-        int item = scanner.nextInt();
+    private static void modifyItem() {
+        System.out.println("current item name: ");
+        String item = scanner.nextLine();
         scanner.nextLine();
         System.out.println("enter new item ");
         String newItem = scanner.nextLine();
         groceryList.modifyGroceryList(item, newItem);
     }
 
-    public static void removeItem() {
-        System.out.println("enter item position to remove  0-...");
-        int item = scanner.nextInt();
-        scanner.nextLine();
+    private static void removeItem() {
+        System.out.println("enter item name to remove ");
+        String item = scanner.nextLine();
         groceryList.removeGroceryList(item);
     }
 
-    public static void searchForItem() {
+    private static void searchForItem() {
         System.out.println("enter item to search for: ");
-        String seachItem = scanner.nextLine();
-        if (groceryList.findItem(seachItem) != null)
-            System.out.println("I found this object");
-        else
+        String searchItem = scanner.nextLine();
+        if (groceryList.onFile(searchItem)) {
+            System.out.println("I found this item !!!!!!!");
+        } else {
             System.out.println("I didn't find these object in my array ");
-
+        }
 
     }
 }
