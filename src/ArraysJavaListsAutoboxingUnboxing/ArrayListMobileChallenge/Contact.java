@@ -6,10 +6,11 @@ public class Contact {
 
     public Contact(String name, String phoneNumber) {
         this.name = name;
-        PhoneNumber = phoneNumber;
+        this.PhoneNumber = phoneNumber;
     }
 
-    public static Contact CreateContact(String name, String number) {
+    public static Contact CreateContact(String name, String number)
+    {
         return new Contact(name, number);
     }
 

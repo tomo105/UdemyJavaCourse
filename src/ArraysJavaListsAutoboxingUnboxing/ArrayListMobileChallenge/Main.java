@@ -1,5 +1,7 @@
 package ArraysJavaListsAutoboxingUnboxing.ArrayListMobileChallenge;
 
+import org.omg.PortableInterceptor.INACTIVE;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,35 +13,53 @@ public class Main {
 
 
         boolean play = true;
+        int number;
+        printOptions();
         while (play) {
-            System.out.println("chose one of methods:");
-            int methodNumber = scanner.nextInt();
-            scanner.nextLine();
-            switch (methodNumber) {
-                case 0:
-                    printOptions();
-                    break;
-                case 1:
-                    mobile.printListOfContacts();
-                    break;
-                case 2:
-                    addNewContact();
-                    break;
-                case 3:
-                    removeContact();
-                    break;
-                case 4:
-                    updateContact();
-                    break;
-                case 5:
-                    queryContact();
-                    break;
-                case 6:
-                    play = false;
-                    break;
+            System.out.println("chose one of methods: (0-6)");
+
+            String methodNumber = scanner.nextLine();
+            try {
+                number = Integer.parseInt(methodNumber);
+            } catch (NumberFormatException e) {
+                System.out.println("you dind't click an number you moron");
+                continue;
+            }
+
+            if (number > 6 || number < 0) {
+
+                System.out.println("you click a number out of range ");
+            } else {
+                switch (number) {
+                    case 0:
+                        printOptions();
+                        break;
+                    case 1:
+                        mobile.printListOfContacts();
+                        break;
+                    case 2:
+                        addNewContact();
+                        break;
+                    case 3:
+                        removeContact();
+                        break;
+                    case 4:
+                        updateContact();
+                        break;
+                    case 5:
+                        queryContact();
+                        break;
+                    case 6:
+                        play = false;
+                        break;
+
+                }
+
+
             }
         }
     }
+
 
     private static void queryContact() {
         System.out.println("Enter existing contact name  ");
@@ -49,7 +69,7 @@ public class Main {
             System.out.println("contact not found");
             return;
         }
-        System.out.println("Name " + newContact.getName());
+        System.out.println("Name " + newContact.getName() + " has number " + newContact.getPhoneNumber());
 
     }
 
@@ -75,8 +95,8 @@ public class Main {
 
     private static void removeContact() {
         System.out.println("enter existing contact to remove");
-        String name = scanner.nextLine();
-        Contact contact = mobile.queryContact(name);
+        String toRemove = scanner.nextLine();
+        Contact contact = mobile.queryContact(toRemove);
         if (contact == null) {
             System.out.println("contact doesn't exist");
             return;
@@ -88,6 +108,8 @@ public class Main {
         }
     }
 
+    //!!! create a new contact class without having any  instance of object -->static method in class Contact
+    // pattern FACTORY
     private static void addNewContact() {
         System.out.println("tell me your name");
         String name = scanner.nextLine();
@@ -95,7 +117,7 @@ public class Main {
         String number = scanner.nextLine();
         Contact contact = Contact.CreateContact(name, number);
         if (mobile.addNewContact(contact)) {
-            System.out.println("added new contact" + contact.getName());
+            System.out.println("added new contact: " + contact.getName());
         } else
             System.out.println("failed to add new contact");
     }
@@ -106,7 +128,7 @@ public class Main {
         System.out.println("click 1 to print list of contacts  ");
         System.out.println("click 2 to add new contact");
         System.out.println("click 3 to remove existing contact");
-        System.out.println("click 4 to modify existing contact");
+        System.out.println("click 4 to update name of existing contact");
         System.out.println("click 5 to check if the contact already exist");
         System.out.println("click 6 to quit");
     }
