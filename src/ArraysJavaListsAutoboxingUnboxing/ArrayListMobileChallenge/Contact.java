@@ -9,7 +9,7 @@ public class Contact {
         this.PhoneNumber = phoneNumber;
     }
 
-    public static Contact CreateContact(String name, String number)
+    static Contact CreateContact(String name, String number)
     {
         return new Contact(name, number);
     }
@@ -19,7 +19,7 @@ public class Contact {
         return name;
     }
 
-    public String getPhoneNumber() {
+    String getPhoneNumber() {
         return PhoneNumber;
     }
 }
