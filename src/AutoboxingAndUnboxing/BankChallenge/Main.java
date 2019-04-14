@@ -14,6 +14,10 @@ public class Main {
         bank.addCustomer("Russia","Olena",150);
         bank.addCustomer("Russia","Misza",12.50);
         bank.listCustomers("Russia",true);
+        if(!(bank.addCustomer("Germany","Heinrich",-12)))
+        {
+            System.out.println("Error the branch doesn't exist");
+        }
     }
 }
 // You job is to create a simple banking application.
