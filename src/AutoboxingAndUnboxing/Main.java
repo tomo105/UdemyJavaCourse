@@ -19,7 +19,7 @@ class intClass {
     }
 }
 
-public class Main {
+public class Main<ii, k> {
     public static void main(String[] args) {
         //----------------------------------------------------------------------------------ArrayList<> with class of primitive types using additional class
          String[] strArray = new String[10];
@@ -65,12 +65,25 @@ public class Main {
             // double value = doubleArrayList.get(i).doubleValue();//unboxing
             System.out.println(i + "--> " + value);
         }
+
+
+
+        ArrayList <Float> floats  = new ArrayList<Float>();
+        for(float  k = 0; k<10 ; k++)
+        {
+            floats.add(Float.valueOf(k));
+
+
+        }
+        System.out.println(floats.get(5));
     }
 
     //easy way to use primitive types in arrayList
     //String is a class
     // Integer is a class
     //Double is a class
+//---------------------------
+
 
 
 }
