@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Main {
-   // ertgewr
+
     public static void main(String[] args) {
 //        List<String> lista =  new ArrayList(3);
 //        lista.add("ala");
