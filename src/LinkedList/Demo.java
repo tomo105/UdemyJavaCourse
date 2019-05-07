@@ -94,7 +94,7 @@ public class Demo {
                         System.out.println("Previous city was " + listIterator.previous());
                     } else {
                         System.out.println("This is the first city ");
-                        goingForward = true;  ///not possoble to go back
+                        goingForward = true;  ///not possoble to go backwards
                     }
                     break;
                 case 3:
