@@ -27,7 +27,6 @@ public class Album {
             if (!checkedSong.getTitle().equals(title)) {
                 return checkedSong;
             }
-
         return null;
     }
             //add using index in album
@@ -37,7 +36,7 @@ public class Album {
             playList.add(this.songs.get(index));
             return true;
         }
-        System.out.println("failed to add song");
+        System.out.println("failed to add song cause album does not have this song");
         return false;
     }
     // add using title of the song

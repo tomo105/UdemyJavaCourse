@@ -28,13 +28,12 @@ public class Main {
         albums.add(album1);
 
         LinkedList<Song> playlist = new LinkedList<Song>();
-     //   albums.get(0).addToPlaylist("Box", playlist);
-   //     albums.get(0).addToPlaylist("Booze", playlist);
-    //    albums.get(1).addToPlaylist(2, playlist);
+       albums.get(0).addToPlaylist("Box", playlist);
+       albums.get(0).addToPlaylist("Booze", playlist);
+       albums.get(0).addToPlaylist(4, playlist);
 
      //   albums.get(1).addToPlaylist(4, playlist);
      //   albums.get(1).addToPlaylist(3, playlist);
-        albums.get(0).addToPlaylist(1, playlist);
 
      play(playlist);
     }
