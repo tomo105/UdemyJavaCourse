@@ -2,7 +2,7 @@ package DuckThinkFirst;
 
 public abstract class Duck {
     FlyBehaviour flyBehaviour;
-    QuackBehaviour quackBehaviour;
+    QuackBehaviour quackBehaviour;//instance of interface  not specific type !!! very usefulK
 
     public Duck() {
     }
@@ -21,4 +21,11 @@ public abstract class Duck {
         System.out.println("i can swim ");
     }
 
+    public void setFlyBehaviour(FlyBehaviour flyBehaviour) {
+        this.flyBehaviour = flyBehaviour;
+    }
+
+    public void setQuackBehaviour(QuackBehaviour quackBehaviour) {
+        this.quackBehaviour = quackBehaviour;
+    }
 }
